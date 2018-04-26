@@ -43,4 +43,9 @@ Voir certains processes de la lambda
 
 ```bash
 ps -o user -o pid -o command
+
+USER       PID COMMAND
+487          1 /usr/bin/java -XX:MaxHeapSize=445645k -XX:MaxMetaspaceSize=52429k -XX:ReservedCodeCacheSize=26214k -Xshare:on -XX:-TieredCompilation -XX:+UseSerialGC -Djava.net.preferIPv4Stack=true -jar /var/runtime/lib/LambdaJavaRTEntry-1.0.jar
+487         11 /bin/sh -i
+487         15 ps -o user -o pid -o command
 ```
