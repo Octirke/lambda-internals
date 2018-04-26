@@ -24,7 +24,9 @@ nc -nvlp 1234
 ```
 
 Ensuite, le dossier java contient le fichier serverless pour bootstrap deux lambdas, une pour lancer le remote shell et l'autre pour télécharger le dossier /var/runtime/lib puis l'upload sur un bucket S3 existant.
+
 La lambda de shell attends un event qui contient le port et l'adresse ou l'IP de l'instance EC2.
+
 La lambda de dll attends un event qui contient le nom du bucket S3 pour l'upload du zip.
 
 Pour déployer et appeler le tout :
