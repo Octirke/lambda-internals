@@ -1,0 +1,29 @@
+service: java-remote-shell
+
+provider:
+  name: aws
+  runtime: java8
+  timeout: 100
+  role: arn:aws:iam::727228661213:role/lambda-s3-execution-role
+  region: eu-west-1
+
+
+package:
+  artifact: target/java-remote-shell-dev.jar
+
+functions:
+  shell:
+    handler: octo.Shell
+    name: thom-java-remote-shell
+    memorySize: 512
+    vpc:
+        securityGroupIds:
+          - sg-182be665
+        subnetIds:
+          - subnet-54fe1132
+          - subnet-01906249
+
+  download:
+      handler: octo.Download
+      name: thom-java-dll-lambda-internals
+      memorySize: 512
